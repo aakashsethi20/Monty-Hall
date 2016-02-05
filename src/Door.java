@@ -15,6 +15,11 @@ public class Door {
 	
 	// ADD YOUR INSTANCE VARIABLES HERE
 	
+	private String name;
+	private boolean open;
+	private boolean prize;
+	private boolean choosen;
+	
 	/** 
      * Creates an instance of the Door object.
      * Initially, the door is closed, doesn't have a prize behind it 
@@ -23,7 +28,10 @@ public class Door {
      * @param name identifier for that door
      */
 	public Door(String name){
-	// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
+		this.name = name;
+		this.open = false;
+		this.prize = false;
+		this.choosen = false;
 	}
 
 	/** 
@@ -46,7 +54,7 @@ public class Door {
      * @return true if the door is open
      */
 	public boolean isOpen(){
-	// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
+		return open;
 	}
 	
 	/** 
@@ -61,7 +69,7 @@ public class Door {
      * @return true if the door has the prize
      */
 	public boolean hasPrize(){
-	// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
+		return prize;
 	}
 	
 	/** 
@@ -76,7 +84,7 @@ public class Door {
      * @return true if the door is selected by the player
      */
 	public boolean isChosen(){
-	// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
+		return choosen;
 	}
 	
 	
@@ -84,6 +92,6 @@ public class Door {
      * @return the door's identifier
      */
 	public String getName(){
-	// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
+		return name;
 	}
 }
