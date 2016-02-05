@@ -38,6 +38,9 @@ public class MontyHall {
  		// Door for prize randomly chosen
  		int randPrize = (int)(Math.random() * 3);
  		doors[randPrize].setPrize();
+ 		
+ 		// Randomly picking a door out of the three
+ 		Door pickedDoor = pickADoor();
 			
 		if(/* SWITCHING STRATEGY LOST */){
 			System.out.println("Switching strategy would have lost");
