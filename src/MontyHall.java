@@ -19,6 +19,8 @@ public class MontyHall {
      * Initializes the three doors.
      */
  	public MontyHall(){
+ 		doors = new Door[3];
+ 		
  		doors[0] = new Door("Door-A");
  		doors[1] = new Door("Door-B");
  		doors[2] = new Door("Door-C");
@@ -38,11 +40,19 @@ public class MontyHall {
  		// Door for prize randomly chosen
  		int randPrize = (int)(Math.random() * 3);
  		doors[randPrize].setPrize();
+ 		Door chosenDoor = doors[randPrize];
+ 		System.out.println("The prize is behind " + chosenDoor.getName() + ".");
  		
  		// Randomly picking a door out of the three
  		Door pickedDoor = pickADoor();
+ 		System.out.println("The player chose " + pickedDoor.getName() + ".");
+ 		
+ 		
+ 		// Opened door
+ 		Door openedDoor = openOtherDoor(chosenDoor, pickedDoor);
+ 		System.out.println("The host opened " + openedDoor.getName() + ".");
 			
-		if(/* SWITCHING STRATEGY LOST */){
+		if(chosenDoor == pickedDoor){
 			System.out.println("Switching strategy would have lost");
 		} else{
 			System.out.println("Switching strategy would have won");	
@@ -71,11 +81,22 @@ public class MontyHall {
      *   @return the door opened
      */
  	private Door openOtherDoor(Door prizeDoor, Door selectedDoor){
-
-// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
+ 		
+ 		boolean opened = false;
+ 		int doorNum = -1;
+ 		
+ 		while(!opened) {
+ 			int rand = (int)(Math.random() * 3);
+ 			if(!doors[rand].hasPrize() && !doors[rand].isChosen()) {
+ 				opened = true;
+ 				doorNum = rand;
+ 				doors[rand].open();
+ 			}
+ 		}
+ 		return doors[doorNum];
 	
 	}
-	
+ 	
  	/**
      * The main method of this program. Examples of the execution of the program
      * from the command line:
@@ -99,8 +120,9 @@ public class MontyHall {
 
 		MontyHall montyHall;
 		
-		StudentInfo.display();
+		//StudentInfo.display();
 		montyHall = new MontyHall();		
+		
 		montyHall.oneGame();
 	}
 
