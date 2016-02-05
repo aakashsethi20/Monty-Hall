@@ -13,14 +13,18 @@
  */
 public class MontyHall {
 
-     // ADD YOUR INSTANCE VARIABLES HERE
+     private Door doorA;
+     private Door doorB;
+     private Door doorC;
 
 	/** 
      * Initializes the three doors.
      */
  	public MontyHall(){
-// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
-		}
+ 		doorA = new Door("Door-A");
+ 		doorB = new Door("Door-B");
+ 		doorC = new Door("Door-C");
+	}
 	
 	/** 
      * Simulates one Monty Hall game.  

@@ -39,14 +39,16 @@ public class Door {
      * and not chosen by the player.
      */
 	public void reset(){
-	// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
+		open = false;
+		prize = false;
+		choosen = false;
 	}
 	
 	/** 
      * Sets this door open.
      */
 	public void open(){
-	// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
+		open = true;
 	}
 	
 	/** 
@@ -61,7 +63,7 @@ public class Door {
      * Puts the prize behind this door.
      */
 	public void setPrize(){
-	// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
+		prize = true;
 	}
 	
 	/** 
@@ -76,7 +78,7 @@ public class Door {
      * Sets this door as selected by the player.
      */
 	public void choose(){
-	// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
+		choosen = true;
 	}
 
 	/** 
