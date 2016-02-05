@@ -13,17 +13,15 @@
  */
 public class MontyHall {
 
-     private Door doorA;
-     private Door doorB;
-     private Door doorC;
+     private Door[] doors;
 
 	/** 
      * Initializes the three doors.
      */
  	public MontyHall(){
- 		doorA = new Door("Door-A");
- 		doorB = new Door("Door-B");
- 		doorC = new Door("Door-C");
+ 		doors[0] = new Door("Door-A");
+ 		doors[1] = new Door("Door-B");
+ 		doors[2] = new Door("Door-C");
 	}
 	
 	/** 
@@ -36,7 +34,10 @@ public class MontyHall {
 	 * </ol>
      */
  	public void oneGame(){
-// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
+ 		
+ 		// Door for prize randomly chosen
+ 		int randPrize = (int)(Math.random() * 3);
+ 		doors[randPrize].setPrize();
 			
 		if(/* SWITCHING STRATEGY LOST */){
 			System.out.println("Switching strategy would have lost");
@@ -51,7 +52,10 @@ public class MontyHall {
      * @return the door randomly selected  
      */
  	private Door pickADoor(){
-// REPLACE THE BODY OF THIS METHOD WITH YOUR OWN IMPLEMENTATION
+ 		// Player chooses door randomly
+ 	 	int randDoor = (int)(Math.random() * 3);
+ 	 	doors[randDoor].choose();
+ 	 	return doors[randDoor];
 	}
 	
 /** 
